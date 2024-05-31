@@ -1,6 +1,5 @@
 //@ts-nocheck
 import path from 'path'
-
 import stripePlugin from '@payloadcms/plugin-stripe'
 import nestedDocs from '@payloadcms/plugin-nested-docs'
 import seo from '@payloadcms/plugin-seo'
@@ -11,12 +10,9 @@ import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { webpackBundler } from '@payloadcms/bundler-webpack'
 import {
   lexicalEditor,
-  HTMLConverterFeature,
-  SlateToLexicalFeature,
   BlocksFeature,
   LinkFeature,
 } from '@payloadcms/richtext-lexical'
-import { slateEditor } from '@payloadcms/richtext-slate'
 import { buildConfig } from 'payload/config'
 import { Config } from 'cms-types'
 
@@ -98,18 +94,15 @@ export default buildConfig({
       }
     },
   },
-  // editor: lexicalEditor({
-  //   features: ({ defaultFeatures }) => [
-  //     ...defaultFeatures,
-  //     // ! Need to comment the line below for recreating cms types
-  //     // BlocksFeature({ blocks: ALL_BLOCKS }),
-  //     LinkFeature({
-  //       enabledCollections: ['pages', 'categories', 'newsPages', 'productPages'],
-  //     }),
-  //   ],
-  // }),
   editor: lexicalEditor({
-
+    features: ({ defaultFeatures }) => [
+      ...defaultFeatures,
+      // ! Need to comment the line below for recreating cms types
+      BlocksFeature({ blocks: ALL_BLOCKS }),
+      LinkFeature({
+        enabledCollections: ['pages', 'categories', 'newsPages', 'productPages'],
+      }),
+    ],
   }),
   collections: [
     Users,
