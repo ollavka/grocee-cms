@@ -108,8 +108,8 @@ export default buildConfig({
   //     }),
   //   ],
   // }),
-  editor: lexicalEditor({
-    features: () => ([])
+  editor: slateEditor({
+    
   }),
   collections: [
     Users,
