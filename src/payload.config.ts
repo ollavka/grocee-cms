@@ -108,7 +108,9 @@ export default buildConfig({
   //     }),
   //   ],
   // }),
-  editor: lexicalEditor({ }),
+  editor: lexicalEditor({
+    features: () => ([])
+  }),
   collections: [
     Users,
     Products,
