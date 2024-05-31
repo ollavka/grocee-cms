@@ -3,6 +3,7 @@ import { isAnyone } from '../../../access/isAnyone'
 import { slugField } from '../../../fields/slug'
 import { ALL_BLOCKS } from '../../../blocks'
 import { isAdmin } from '../../../access/isAdmin'
+import { BlocksFeature, LinkFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
 export const NewsPages: CollectionConfig = {
   slug: 'newsPages',
@@ -36,6 +37,16 @@ export const NewsPages: CollectionConfig = {
       name: 'content',
       type: 'richText',
       localized: true,
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          // ! Need to comment the line below for recreating cms types
+          BlocksFeature({ blocks: ALL_BLOCKS }),
+          LinkFeature({
+            enabledCollections: ['pages', 'categories', 'newsPages', 'productPages'],
+          }),
+        ],
+      }),
     },
     {
       name: 'layout',
