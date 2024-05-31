@@ -97,18 +97,18 @@ export default buildConfig({
       }
     },
   },
-  editor: lexicalEditor({
-    features: ({ defaultFeatures }) => [
-      ...defaultFeatures,
-      SlateToLexicalFeature({}),
-      HTMLConverterFeature({}),
-      // ! Need to comment the line below for recreating cms types
-      BlocksFeature({ blocks: ALL_BLOCKS }),
-      LinkFeature({
-        enabledCollections: ['pages', 'categories', 'newsPages', 'productPages'],
-      }),
-    ],
-  }),
+  // editor: lexicalEditor({
+  //   features: ({ defaultFeatures }) => [
+  //     ...defaultFeatures,
+  //     SlateToLexicalFeature({}),
+  //     HTMLConverterFeature({}),
+  //     // ! Need to comment the line below for recreating cms types
+  //     BlocksFeature({ blocks: ALL_BLOCKS }),
+  //     LinkFeature({
+  //       enabledCollections: ['pages', 'categories', 'newsPages', 'productPages'],
+  //     }),
+  //   ],
+  // }),
   collections: [
     Users,
     Products,
