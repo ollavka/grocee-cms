@@ -18,7 +18,7 @@ export const RichText: Block = {
         features: ({ defaultFeatures }) => [
           ...defaultFeatures,
           // ! Need to comment the line below for recreating cms types
-          BlocksFeature({ blocks: ALL_BLOCKS }),
+          // BlocksFeature({ blocks: ALL_BLOCKS }),
           LinkFeature({
             enabledCollections: ['pages', 'categories', 'newsPages', 'productPages'],
           }),
