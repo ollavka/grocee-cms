@@ -14,16 +14,16 @@ export const RichText: Block = {
       name: 'content',
       type: 'richText',
       localized: true,
-      editor: lexicalEditor({
-        features: ({ defaultFeatures }) => [
-          ...defaultFeatures,
-          // ! Need to comment the line below for recreating cms types
-          // BlocksFeature({ blocks: ALL_BLOCKS }),
-          LinkFeature({
-            enabledCollections: ['pages', 'categories', 'newsPages', 'productPages'],
-          }),
-        ],
-      }),
+      // editor: lexicalEditor({
+      //   features: ({ defaultFeatures }) => [
+      //     ...defaultFeatures,
+      //     // ! Need to comment the line below for recreating cms types
+      //     // BlocksFeature({ blocks: ALL_BLOCKS }),
+      //     LinkFeature({
+      //       enabledCollections: ['pages', 'categories', 'newsPages', 'productPages'],
+      //     }),
+      //   ],
+      // }),
     },
   ],
   imageURL: '/previews/rich-text.png',
