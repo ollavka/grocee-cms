@@ -108,7 +108,7 @@ export default buildConfig({
   //     }),
   //   ],
   // }),
-  editor: slateEditor({ }),
+  editor: lexicalEditor({ }),
   collections: [
     Users,
     Products,
